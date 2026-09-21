@@ -1,0 +1,3 @@
+package iwish.client;
+import iwish.common.*; import java.io.*; import java.net.*;
+public class ApiClient implements Closeable {private final Socket socket;private final ObjectOutputStream out;private final ObjectInputStream in; public ApiClient()throws IOException{socket=new Socket("localhost",Protocol.PORT);out=new ObjectOutputStream(socket.getOutputStream());in=new ObjectInputStream(socket.getInputStream());} public synchronized Response call(Request r)throws IOException,ClassNotFoundException{out.reset();out.writeObject(r);out.flush();return(Response)in.readObject();} public void close()throws IOException{socket.close();}}
