@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IWish" default="default" basedir=".">
+    <description>Builds, tests, and runs the I-Wish application.</description>
+    <import file="nbproject/build-impl.xml"/>
+
+    <!-- Ensure CSS and logo resources are copied to build classes for NetBeans -->
+    <target name="-post-compile">
+        <copy file="src/main/resources/iwish.css" todir="${build.classes.dir}" failonerror="false"/>
+        <copy file="src/main/resources/iwish.css" todir="${build.classes.dir}/iwish/client" failonerror="false"/>
+        <copy todir="${build.classes.dir}/img" failonerror="false">
+            <fileset dir="img"/>
+        </copy>
+    </target>
+
+    <!-- Standalone targets for running Server and Client on any machine -->
+    <target name="server" depends="compile" description="Start I-Wish Socket Server">
+        <java classname="iwish.server.ServerMain" fork="true">
+            <classpath>
+                <pathelement path="${build.classes.dir}"/>
+                <fileset dir="lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <jvmarg value="-Dfile.encoding=UTF-8"/>
+        </java>
+    </target>
+
+    <target name="client" depends="compile" description="Launch I-Wish Client Application">
+        <java classname="iwish.client.Main" fork="true">
+            <classpath>
+                <pathelement path="${build.classes.dir}"/>
+                <fileset dir="lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <jvmarg value="-Dfile.encoding=UTF-8"/>
+        </java>
+    </target>
+</project>
