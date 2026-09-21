@@ -672,25 +672,21 @@ XAMPP phpMyAdmin view of the `iwish` relational database showing all 6 populated
 
 ## Demo Video
 
-Add the final demonstration recording to the GitHub release or upload it to an approved video host, then replace the placeholder below with the real URL:
+Watch the complete working demonstration of the I-Wish application:
 
-```text
-Demo video: [I-Wish Working Demo](https://www.awesomescreenshot.com/video/56731161?key=95c19397b890f85d7cecb8e692a05704)
-```
+<iframe frameBorder='0' width='640' height='360' webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.awesomescreenshot.com/embed?id=56731161&shareKey=95c19397b890f85d7cecb8e692a05704&info=false"></iframe>
 
-The video should be short and purposeful. It should show the server starting, a user signing in, friend management, wish-list CRUD, a second client viewing a friend's wish, a specific contribution, the item becoming fully funded, the resulting notifications, and the matching rows in phpMyAdmin. The video should use the same demo accounts documented in this README and should not display database passwords or personal credentials.
+>  **Direct Link**: [Watch I-Wish Working Demo Video](https://www.awesomescreenshot.com/video/56731161?key=95c19397b890f85d7cecb8e692a05704)
 
-Recommended recording order:
-
-1. Show the XAMPP MySQL service and the imported `iwish` database.
-2. Start `ServerMain` and show port `5050`.
-3. Open the JavaFX client and sign in.
-4. Add or edit a wish and show the updated card.
-5. Use a second client for the friend and contribution scenario.
-6. Finish the funding and open Notifications on both relevant accounts.
-7. Open phpMyAdmin and show the persisted `wish_items`, `contributions`, and `notifications` records.
-
-The README intentionally leaves the video URL as a placeholder because a real recording must be produced by the team and must represent the final build.
+The demo showcases the end-to-end user workflows:
+1. XAMPP MySQL database service and the imported `iwish` database schema.
+2. `ServerMain` startup and socket listener on port `5050`.
+3. JavaFX client launch and secure user authentication.
+4. Wish management (creation, editing, goal progress tracking).
+5. Social features: sending friend requests and browsing friends' wish lists.
+6. Multi-user contribution flow and milestone funding (100% completed).
+7. Live notification delivery across both buyer and receiver accounts.
+8. Database synchronization and verified record persistence in phpMyAdmin.
 
 ---
 
